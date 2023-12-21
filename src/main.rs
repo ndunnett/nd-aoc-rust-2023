@@ -1,6 +1,7 @@
 mod input;
 mod day01;
+mod day02;
 
 fn main() {
-    day01::puzzle();
+    day02::puzzle();
 }
