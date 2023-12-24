@@ -1,19 +1,15 @@
 {
-    "name": "Rust Advent of Code",
-    "image": "mcr.microsoft.com/devcontainers/rust",
-    "onCreateCommand": {},
-    "updateContentCommand": {},
-    "postCreateCommand": {
-      "update-rust": "rustup update"
-    },
-    "postStartCommand": {},
-    "postAttachCommand": {},
-    "runArgs": ["--env-file", "${localWorkspaceFolder}/.devcontainer/.env"],
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "rust-lang.rust-analyzer"
-        ]
-      }
+  "name": "Rust",
+  "image": "mcr.microsoft.com/devcontainers/rust:bookworm",
+  "postCreateCommand": {
+    "update-rust": "rustup update"
+  },
+  "runArgs": ["--env-file", "${localWorkspaceFolder}/.devcontainer/.env"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer"
+      ]
     }
   }
+}
