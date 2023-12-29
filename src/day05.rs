@@ -17,7 +17,7 @@ impl Map {
     fn transform(&self, seed: i64) -> i64 {
         self.layers
             .iter()
-            .find(|layer| layer.start <= seed && layer.end >= seed)
+            .find(|layer| layer.start <= seed && layer.end > seed)
             .map_or(seed, |layer| seed + layer.offset)
     }
 }
@@ -70,7 +70,6 @@ fn part1(input: &str) -> i64 {
 fn part2(input: &str) -> i64 {
     let (seeds, maps) = parse(input);
 
-    // gives the wrong result for my input data, can't understand why
     seeds
         .par_chunks_exact(2)
         .map(|seed_range| {
